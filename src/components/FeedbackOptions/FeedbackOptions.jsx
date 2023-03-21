@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { Children } from 'react';
 import css from './FeedbackOptions.module.css';
 
 export const FeedBackOptions = ({
