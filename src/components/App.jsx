@@ -8,11 +8,10 @@ export const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
-  const options = Object.keys({ good, neutral, bad })
+  const options = Object.keys({ good, neutral, bad });
 
   const handleIncrement = e => {
     const name = e.target.textContent;
-    // console.log(e.target.textContent)
     switch (name) {
       case 'good':
         setGood(prevState => prevState + 1);
@@ -27,18 +26,6 @@ export const App = () => {
         return;
     }
   };
-  // const handleGoodIncrement = (e) => {
-  //   setGood(prevState => prevState + 1);
-  //   console.log(e.target)
-  // }
-
-  // const handleNeutralIncrement = () => {
-  //   setNeutral(prevState =>  prevState + 1)
-  // }
-
-  // const handleBadIncrement = () => {
-  //   setBad(prevState =>  prevState + 1)
-  //  }
 
   const countTotalFeedback = () => {
     return good + neutral + bad;
@@ -51,14 +38,7 @@ export const App = () => {
   return (
     <>
       <Section title="Please leave feedback">
-        <FeedBackOptions
-          options={options}
-          // options={['good', 'neutral', 'bad']}
-          onLeaveFeedback={handleIncrement}
-          // onGoodIncrement={handleGoodIncrement}
-          // onNeutralIncrement={handleNeutralIncrement}
-          // onBadIncrement={handleBadIncrement}
-        />
+        <FeedBackOptions options={options} onLeaveFeedback={handleIncrement} />
       </Section>
       <Section title="Statistics">
         {countTotalFeedback() !== 0 ? (
